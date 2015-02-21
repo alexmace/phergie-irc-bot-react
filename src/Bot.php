@@ -85,8 +85,9 @@ class Bot
      * Sets the IRC client for the bot to use.
      *
      * @param \Phergie\Irc\Client\React\ClientInterface $client
+     * @todo Restore the interface specified.
      */
-    public function setClient(ClientInterface $client)
+    public function setClient($client)
     {
         $this->registerClientSubscribers($client);
         $this->client = $client;
@@ -281,7 +282,8 @@ class Bot
         $connections = array_filter(
             $config['connections'],
             function($connection) {
-                return $connection instanceof ConnectionInterface;
+                return $connection instanceof ConnectionInterface 
+                    || $connection instanceof \Phergie\Slack\ConnectionInterface;
             }
         );
         if (count($connections) != count($config['connections'])) {
@@ -427,8 +429,9 @@ class Bot
      *
      * @param \Phergie\Irc\Client\React\ClientInterface $client Client for
      *        which to configure events
+     * @todo Restore the client interface to this.
      */
-    protected function registerClientSubscribers(ClientInterface $client)
+    protected function registerClientSubscribers($client)
     {
         $bot = $this;
 
