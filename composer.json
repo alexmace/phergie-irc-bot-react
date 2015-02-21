@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.2",
-        "phergie/phergie-irc-client-react": "2.*",
+        "phergie/phergie-slack-client-react": "dev-master",
         "phergie/phergie-slack-connection": "dev-master",
         "phergie/phergie-irc-event": "1.*",
         "evenement/evenement": "~2.0",
@@ -21,7 +21,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/phergie/phergie-irc-client-react"
+            "url": "https://github.com/alexmace/phergie-slack-client-react"
         },
         {
             "type": "vcs",
